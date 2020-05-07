@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Browse, Search With accurate Quran text and Quran translations in various languages." />
+  <meta name="keywords" content="Quran Translation Authentic Accurate Qur'an Text Kuran Roots Koran Recitation Tartil Tarteel Learn Quraan Online Application Download
+  تنزيل القرآن الكريم قرائت قرآن ترتيل Keywords" />
+  <meta name="author" content="Shaheb">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Oswald&family=Saira+Stencil+One&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    font-family: 'Saira Stencil One', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Oswald', sans-serif; -->
+
+
+  <title>Quran-Ul-Karim | القرآن الكريم</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <style>
+    .bg-light {
+        background-color: #385063 !important;
+        color: #fff !important;
+    }
+    .heading {
+      text-align: center;
+      position: absolute;
+      color: #fff;
+      top: 50px;
+      width: 89%;
+    }
+
+    .heading h1 {
+      font-family: 'Saira Stencil One', cursive;
+      font-weight: bold !important;
+    }
+    #suraName {
+      font-family: 'Saira Stencil One', cursive;
+   
+    }
+
+
+    .selectdiv {
+      position: relative;
+      /*Don't really need this just for demo styling*/
+
+      float: left;
+      min-width: 200px;
+      margin: 10px 4%;
+    }
+
+    /* IE11 hide native button (thanks Matt!) */
+    select::-ms-expand {
+      display: none;
+    }
+
+    .selectdiv:after {
+      content: '<>';
+      font: 17px "Consolas", monospace;
+      color: #333;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+      right: 11px;
+      /*Adjust for position however you want*/
+
+      top: 50px;
+      padding: 0 0 2px;
+      border-bottom: 1px solid #999;
+      /*left line */
+
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .selectdiv select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      /* Add some styling */
+
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      height: 50px;
+      float: right;
+      margin: 5px 0px;
+      padding: 0px 11px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #333;
+      background-color: #ffffff;
+      background-image: none;
+      border: 1px solid #cccccc;
+      -ms-word-break: normal;
+      word-break: normal;
+      font-family: 'Scheherazade', serif;
+      font-size:25px;
+    }
+
+
+    ul.pagination {
+      clear: both;
+      width: 658px;
+      display: inline;
+      background: red;
+      height: auto;
+      display: block;
+      /* width: auto; */
+    }
+
+    ul.pagination li {
+      width: 36px;
+      height: auto;
+      float: left;
+    }
+
+
+    #suraContainer {
+      width: 100%;
+      padding-top: 20px;
+      direction: rtl;
+      font-family: "Times New Roman";
+      clear: both;
+      overflow: hidden;
+      background-image: url('assets/cover_page.png');
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+      min-height: 842px;
+      height: auto;
+      padding-bottom: 25px;
+      z-index: -999;
+    }
+
+    .wrapper {
+      background: #02252f;
+      padding: 0 20px;
+    }
+
+    ul.pagination {
+      clear: both;
+    }
+
+    .ayahBox {
+      border: 1px dotted;
+      background-color: #FFFFF2;
+      padding: 8px;
+      margin: 1px 0;
+    }
+
+    .qarabic {
+      font-family: "KFGQPC Uthman Taha Naskh", KFGQPC_Naskh;
+      font-size: 35px;
+      direction: rtl;
+      padding: 15px;
+      text-align: right;
+      word-spacing: 5px;
+      color: #0076A3;
+      float: right;
+    }
+
+    .ayahBoxNum {
+      display: inline;
+      padding-left: 10px;
+
+    }
+
+    .translate {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14px;
+      direction: ltr;
+      padding: 0;
+      text-align: center;
+      word-spacing: 0px;
+      ;
+      color: #0076A3;
+    }
+
+
+    @media (max-width: 767px) {
+      #suraContainer {
+        margin: 0 !important;
+      }
+
+      .coverGraphy img {
+        width: 41% !important;
+        transform: translate(-50%, 165%) !important;
+      }
+
+      ul.pagination {
+        width: auto !important;
+      }
+
+      .heading h1 {
+        font-size: 30px !important;
+      }
+
+      .heading {
+        width: 78%;
+      }
+
+
+    }
+
+    @media (min-width: 2560px) {
+      .coverGraphy img {
+        width: 11% !important;
+      }
+
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+      #suraContainer {
+        margin: 0 !important;
+
+      }
+
+      .coverGraphy img {
+        width: 20% !important;
+        transform: translate(-67%, 180%) !important;
+      }
+
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      .coverGraphy img {
+        width: 38% !important;
+        transform: translate(-49%, 164%) !important;
+      }
+    }
+
+    .coverGraphy {
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .coverGraphy img {
+      border: 16px solid #ffffff00;
+      border-radius: 50%;
+      border-top: 16px solid #0000ff00;
+      border-right: 16px solid #00800000;
+      border-bottom: 16px solid #ff000000;
+      border-left: 16px solid #ffc0cb00;
+      width: 15%;
+      height: auto;
+      overflow: hidden;
+      display: none;
+      margin: 0;
+      transform: translate(-89%, 163%);
+      opacity: 1;
+      position: absolute;
+
+      left: 50%;
+      z-index: 9999;
+
+
+    }
+    .ayahBox.qarabic:hover {
+      background:#effffb;
+  }
+
+
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Holy Quran</div>
+      <div class="list-group list-group-flush">
+        <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a> -->
+
+
+
+        <div>
+          <div class="sub-menu">
+
+            <div class="menu-body" style="display: block;">
+              <form>
+                <div class="menu-row selectdiv">
+                  <label class="small">Sura:</label>
+                  <select id="suraMenu" onchange="showSura(this.value, this.options[this.selectedIndex].text)">
+                    <option selected>Select a Sura</option>
+                    <option value="1,7">1. الفاتحة</option>
+                    <option value="2,286">2. البقرة</option>
+                    <option value="3,200">3. آل عمران</option>
+                    <option value="4,176">4. النساء</option>
+                    <option value="5,120">5. المائدة</option>
+                    <option value="6,165">6. الأنعام</option>
+                    <option value="7,206">7. الأعراف</option>
+                    <option value="8,75">8. الأنفال</option>
+                    <option value="9,129">9. التوبة</option>
+                    <option value="10,109">10. يونس</option>
+                    <option value="11,123">11. هود</option>
+                    <option value="12,111">12. يوسف</option>
+                    <option value="13,43">13. الرعد</option>
+                    <option value="14,52">14. ابراهيم</option>
+                    <option value="15,99">15. الحجر</option>
+                    <option value="16,128">16. النحل</option>
+                    <option value="17,111">17. الإسراء</option>
+                    <option value="18,110">18. الكهف</option>
+                    <option value="19,98">19. مريم</option>
+                    <option value="20,135">20. طه</option>
+                    <option value="21,112">21. الأنبياء</option>
+                    <option value="22,78">22. الحج</option>
+                    <option value="23,118">23. المؤمنون</option>
+                    <option value="24,64">24. النور</option>
+                    <option value="25,77">25. الفرقان</option>
+                    <option value="26,227">26. الشعراء</option>
+                    <option value="27,93">27. النمل</option>
+                    <option value="28,88">28. القصص</option>
+                    <option value="29,69">29. العنكبوت</option>
+                    <option value="30,60">30. الروم</option>
+                    <option value="31,34">31. لقمان</option>
+                    <option value="32,30">32. السجدة</option>
+                    <option value="33,73">33. الأحزاب</option>
+                    <option value="34,54">34. سبإ</option>
+                    <option value="35,45">35. فاطر</option>
+                    <option value="36,83">36. يس</option>
+                    <option value="37,182">37. الصافات</option>
+                    <option value="38,88">38. ص</option>
+                    <option value="39,75">39. الزمر</option>
+                    <option value="40,85">40. غافر</option>
+                    <option value="41,54">41. فصلت</option>
+                    <option value="42,53">42. الشورى</option>
+                    <option value="43,89">43. الزخرف</option>
+                    <option value="44,59">44. الدخان</option>
+                    <option value="45,37">45. الجاثية</option>
+                    <option value="46,35">46. الأحقاف</option>
+                    <option value="47,38">47. محمد</option>
+                    <option value="48,29">48. الفتح</option>
+                    <option value="49,18">49. الحجرات</option>
+                    <option value="50,45">50. ق</option>
+                    <option value="51,60">51. الذاريات</option>
+                    <option value="52,49">52. الطور</option>
+                    <option value="53,62">53. النجم</option>
+                    <option value="54,55">54. القمر</option>
+                    <option value="55,78">55. الرحمن</option>
+                    <option value="56,96">56. الواقعة</option>
+                    <option value="57,29">57. الحديد</option>
+                    <option value="58,22">58. المجادلة</option>
+                    <option value="59,24">59. الحشر</option>
+                    <option value="60,13">60. الممتحنة</option>
+                    <option value="61,14">61. الصف</option>
+                    <option value="62,11">62. الجمعة</option>
+                    <option value="63,11">63. المنافقون</option>
+                    <option value="64,18">64. التغابن</option>
+                    <option value="65,12">65. الطلاق</option>
+                    <option value="66,12">66. التحريم</option>
+                    <option value="67,30">67. الملك</option>
+                    <option value="68,52">68. القلم</option>
+                    <option value="69,52">69. الحاقة</option>
+                    <option value="70,44">70. المعارج</option>
+                    <option value="71,28">71. نوح</option>
+                    <option value="72,28">72. الجن</option>
+                    <option value="73,20">73. المزمل</option>
+                    <option value="74,56">74. المدثر</option>
+                    <option value="75,40">75. القيامة</option>
+                    <option value="76,31">76. الانسان</option>
+                    <option value="77,50">77. المرسلات</option>
+                    <option value="78,40">78. النبإ</option>
+                    <option value="79,46">79. النازعات</option>
+                    <option value="80,42">80. عبس</option>
+                    <option value="81,29">81. التكوير</option>
+                    <option value="82,19">82. الإنفطار</option>
+                    <option value="83,36">83. المطففين</option>
+                    <option value="84,25">84. الإنشقاق</option>
+                    <option value="85,22">85. البروج</option>
+                    <option value="86,17">86. الطارق</option>
+                    <option value="87,19">87. الأعلى</option>
+                    <option value="88,26">88. الغاشية</option>
+                    <option value="89,30">89. الفجر</option>
+                    <option value="90,20">90. البلد</option>
+                    <option value="91,15">91. الشمس</option>
+                    <option value="92,21">92. الليل</option>
+                    <option value="93,11">93. الضحى</option>
+                    <option value="94,8">94. الشرح</option>
+                    <option value="95,8">95. التين</option>
+                    <option value="96,19">96. العلق</option>
+                    <option value="97,5">97. القدر</option>
+                    <option value="98,8">98. البينة</option>
+                    <option value="99,8">99. الزلزلة</option>
+                    <option value="100,11">100. العاديات</option>
+                    <option value="101,11">101. القارعة</option>
+                    <option value="102,8">102. التكاثر</option>
+                    <option value="103,3">103. العصر</option>
+                    <option value="104,9">104. الهمزة</option>
+                    <option value="105,5">105. الفيل</option>
+                    <option value="106,4">106. قريش</option>
+                    <option value="107,7">107. الماعون</option>
+                    <option value="108,3">108. الكوثر</option>
+                    <option value="109,6">109. الكافرون</option>
+                    <option value="110,3">110. النصر</option>
+                    <option value="111,5">111. المسد</option>
+                    <option value="112,4">112. الإخلاص</option>
+                    <option value="113,5">113. الفلق</option>
+                    <option value="114,6">114. الناس</option>
+                  </select>
+                </div>
+                <!-- <div class="menu-row">
+                  <label class="small">Aya:</label>
+                  <select id="ayaMenu" onchange="showAya();">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                </div>
+
+                <div class="menu-row">
+                  <label class="small">Page:</label>
+                  <input type="text" value="128" id="pageNum" class="small">
+                  <span class="button small-button" onclick="changePage(-1)"> - </span>
+                  <span class="button small-button" onclick="changePage(+1)"> + </span>
+                </div> -->
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+
+
+
+
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle"> &laquo; Click and Select A Sura</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+      </nav>
+
+
+      <!-- Quran Container Start-->
+      <div class="container">
+        <!-- <div id="loader" class="loader" style="display: none;">
+          <img src="assets/loader.gif" width="auto" height="200">
+        </div> -->
+
+        <div id="coverGraphy" class="coverGraphy">
+          <img src="assets/loader.gif" width="auto" height="200">
+        </div>
+
+
+        <div class="col-lg-7">
+          <h1 id="suraName"></h1>
+
+          <div class="wrapper">
+
+            <div class="heading" aria-label="Sura Name">
+              <h1 id="heading">The Holy<br>Quran-Ul-Karim</h1>
+            </div>
+            <div id="suraContainer">
+
+              <div id="suraBody"></div>
+
+            </div>
+          </div>
+
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination"></ul>
+        </nav>
+      </div>
+
+      <!-- Quran Container End-->
+
+
+
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="holyquran.js"></script>
+  <script src="pagination.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
